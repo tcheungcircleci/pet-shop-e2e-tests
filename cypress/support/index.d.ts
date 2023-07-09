@@ -27,3 +27,9 @@ declare namespace Cypress {
         getElement(locator: string): Chainable<any>;
     }
 }
+
+declare namespace Cypress {
+    interface Chainable<Subject = any> {
+        createUser(user): Chainable<any>;
+    }
+}
