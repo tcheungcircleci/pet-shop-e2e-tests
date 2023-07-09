@@ -49,7 +49,7 @@ Cypress.Commands.add('signUp', (inputFieldlocator, signUpbuttonLocator , user) =
     cy.get(signUpbuttonLocator).contains('SIGN UP').click();
 });
 
-Cypress.Commands.add('login', (inputFieldlocator, loginbuttonLocator, email, password) => { 
+Cypress.Commands.add('loginAdminUI', (inputFieldlocator, loginbuttonLocator, email, password) => { 
     cy.getElement(inputFieldlocator).eq(0).type(email);
     cy.getElement(inputFieldlocator).eq(1).type(password);
     cy.getElement(loginbuttonLocator).click();
@@ -80,7 +80,7 @@ Cypress.Commands.add('createUser', (user) => {
         .then(cy.wrap);
 });
 
-Cypress.Commands.add('loginAdmin', (user) => {
+Cypress.Commands.add('loginAdminAPI', (user) => {
     return cy
         .request(
             {
