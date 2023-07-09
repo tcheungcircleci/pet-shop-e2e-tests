@@ -33,7 +33,7 @@ Cypress.Commands.add('generateRandomUser', (): Cypress.Chainable<any> => {
 });
 
 Cypress.Commands.add('getElement', (locator: string) => { 
-    cy.get(`${locator}`);
+    cy.get(`${locator}`, {timeout: 5000});
 });
 
 Cypress.Commands.add('signUp', (inputFieldlocator, signUpbuttonLocator , user) => { 
@@ -60,4 +60,22 @@ Cypress.Commands.add('createUser', (user) => {
             }
         )
         .then(cy.wrap);
+});
+
+Cypress.Commands.add('login', (inputFieldlocator, loginbuttonLocator, email, password) => { 
+    cy.getElement(inputFieldlocator).eq(0).type(email);
+    cy.getElement(inputFieldlocator).eq(1).type(password);
+    cy.getElement(loginbuttonLocator).click();
+});
+
+Cypress.Commands.add('addCustomer', (inputFieldlocator, addCustomerBtnLocator, customer) => { 
+    cy.getElement(inputFieldlocator).eq(0).type(customer.first_name);
+    cy.getElement(inputFieldlocator).eq(1).type(customer.last_name);
+    cy.getElement(inputFieldlocator).eq(2).type(customer.email);
+    cy.getElement(inputFieldlocator).eq(3).type(customer.phone_number);
+    cy.getElement(inputFieldlocator).eq(4).type(customer.address);
+    cy.getElement(inputFieldlocator).eq(5).type(customer.password);
+    cy.getElement(inputFieldlocator).eq(6).type(customer.password_confirmation); 
+    cy.contains(addCustomerBtnLocator).click();
+    cy.get('.mdi-close').click();
 });
