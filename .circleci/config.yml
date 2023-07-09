@@ -14,9 +14,9 @@ jobs:
           command: |
             npm install
       - run:
-          name: Run tests --exit-code
+          name: Run tests
           command: |
-            npm test
+            npm test --exit-code
       - store_artifacts:
           path: allure-report/
 
