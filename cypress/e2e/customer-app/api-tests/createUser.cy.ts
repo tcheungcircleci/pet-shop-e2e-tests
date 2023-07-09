@@ -1,8 +1,7 @@
-describe("/api/v1/user/create' endpoint", () => {
+describe('"/api/v1/user/create" endpoint', () => {
     it("should create a user", () => {
         cy.generateRandomUser().then((randomUser) => { 
             const user = randomUser;
-            console.log(user);
             cy.createUser(user).should((response) => {
                 expect(response.status).to.equal(200);
                 expect(response.headers['content-type']).to.equal('application/json');
@@ -41,7 +40,7 @@ describe("/api/v1/user/create' endpoint", () => {
                 expect(response.body.data.phone_number).to.be.a('string');
                 expect(response.body.data.phone_number).to.eq(user.phone_number);
 
-                expect(response.body.error).to.be.an(null);
+                expect(response.body.error).to.be.a(null);
                 expect(response.body).to.have.property('errors');
                 expect(response.body.errors).to.be.an('array');
                 expect(response.body).to.have.property('extra');
