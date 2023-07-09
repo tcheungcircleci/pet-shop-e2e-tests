@@ -4,7 +4,7 @@
   "description": "Pet-shop E2E Automation Tests",
   "main": "index.js",
   "scripts": {
-    "cypress": "cypress run --exit-code 1 --env allure=true",
+    "cypress": "cypress run --env allure=true",
     "generateReport": "allure generate allure-results --clean -o allure-report",
     "test": "npm run cypress || npm run posttest",
     "posttest": "npm run generateReport",
