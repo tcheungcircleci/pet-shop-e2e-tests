@@ -12,8 +12,8 @@ describe('Sign Up to PetShop-UserApp', () => {
             });
 
             cy.wait('@Customer').then((customer)=>{
-                expect(customer.response.body.data.first_name).to.eq(user.firstName);
-                expect(customer.response.body.data.last_name).to.eq(user.lastName);
+                expect(customer.response.body.data.first_name).to.eq(user.first_name);
+                expect(customer.response.body.data.last_name).to.eq(user.last_name);
                 expect(customer.response.body.data.email).to.eq(user.email);
             });
         });
