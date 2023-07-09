@@ -30,12 +30,6 @@ declare namespace Cypress {
 
 declare namespace Cypress {
     interface Chainable<Subject = any> {
-        createUser(user): Chainable<any>;
-    }
-}
-
-declare namespace Cypress {
-    interface Chainable<Subject = any> {
         login(inputFieldlocator, loginbuttonLocator, email, password): Chainable<any>;
     }
 }
@@ -43,5 +37,17 @@ declare namespace Cypress {
 declare namespace Cypress {
     interface Chainable<Subject = any> {
         addCustomer(inputFieldlocator, signUpbuttonLocator, customer): Chainable<any>;
+    }
+}
+
+declare namespace Cypress {
+    interface Chainable<Subject = any> {
+        createUser(user): Chainable<any>;
+    }
+}
+
+declare namespace Cypress {
+    interface Chainable<Subject = any> {
+        loginAdmin(user): Chainable<any>;
     }
 }

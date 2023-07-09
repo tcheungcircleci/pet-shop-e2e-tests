@@ -49,19 +49,6 @@ Cypress.Commands.add('signUp', (inputFieldlocator, signUpbuttonLocator , user) =
     cy.get(signUpbuttonLocator).contains('SIGN UP').click();
 });
 
-Cypress.Commands.add('createUser', (user) => {
-    return cy
-        .request(
-            {
-                method: 'POST',
-                url: "/api/v1/user/create",
-                body: user,
-                failOnStatusCode: false,
-            }
-        )
-        .then(cy.wrap);
-});
-
 Cypress.Commands.add('login', (inputFieldlocator, loginbuttonLocator, email, password) => { 
     cy.getElement(inputFieldlocator).eq(0).type(email);
     cy.getElement(inputFieldlocator).eq(1).type(password);
@@ -78,4 +65,30 @@ Cypress.Commands.add('addCustomer', (inputFieldlocator, addCustomerBtnLocator, c
     cy.getElement(inputFieldlocator).eq(6).type(customer.password_confirmation); 
     cy.contains(addCustomerBtnLocator).click();
     cy.get('.mdi-close').click();
+});
+
+Cypress.Commands.add('createUser', (user) => {
+    return cy
+        .request(
+            {
+                method: 'POST',
+                url: '/api/v1/user/create',
+                body: user,
+                failOnStatusCode: false,
+            }
+        )
+        .then(cy.wrap);
+});
+
+Cypress.Commands.add('loginAdmin', (user) => {
+    return cy
+        .request(
+            {
+                method: 'POST',
+                url: '/api/v1/admin/login',
+                body: user,
+                failOnStatusCode: false,
+            }
+        )
+        .then(cy.wrap);
 });
