@@ -5,7 +5,7 @@ describe('"/api/v1/admin/login" endpoint', () => {
             "password": Cypress.env('adminPassword')
         };
         
-        cy.loginAdmin(adminCredentials).should((response) => {
+        cy.loginAdminAPI(adminCredentials).should((response) => {
             expect(response.status).to.equal(200);
             expect(response.headers['content-type']).to.equal('application/json');
             expect(response.body).to.be.an("object");

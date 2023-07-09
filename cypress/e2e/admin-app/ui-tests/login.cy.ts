@@ -10,7 +10,7 @@ describe('Login to PetShop-AdminApp', () => {
 
     it('should allow login with valid credentials', () => {
         cy.fixture('locators.json').then((locators) => { 
-            cy.login(locators.adminLoginField, locators.adminLoginBtn, 
+            cy.loginAdminUI(locators.adminLoginField, locators.adminLoginBtn, 
                 Cypress.env('adminEmail'), Cypress.env('adminPassword') 
             );
         });
@@ -20,7 +20,7 @@ describe('Login to PetShop-AdminApp', () => {
     it('should block logging in with invalid credentials', () => {
         cy.fixture('locators.json').then((locators) => { 
             cy.fixture('loginData.json').then((loginCredential) => { 
-                cy.login(locators.adminLoginField, locators.adminLoginBtn, 
+                cy.loginAdminUI(locators.adminLoginField, locators.adminLoginBtn, 
                     loginCredential.wrongEmail, loginCredential.wrongPassword
                 );
                 cy.get(loginErrorMessage).should('contain.text', expectedMessage);
@@ -31,7 +31,7 @@ describe('Login to PetShop-AdminApp', () => {
     it('should not allow logging in with invalid email', () => {
         cy.fixture('locators.json').then((locators) => { 
             cy.fixture('loginData.json').then((loginCredential) => { 
-                cy.login(locators.adminLoginField, locators.adminLoginBtn, 
+                cy.loginAdminUI(locators.adminLoginField, locators.adminLoginBtn, 
                     loginCredential.wrongEmail, Cypress.env('adminPassword') 
                 );
                 cy.get(loginErrorMessage).should('contain.text', expectedMessage);
@@ -43,7 +43,7 @@ describe('Login to PetShop-AdminApp', () => {
     it('should block logging in with invalid password', () => {
         cy.fixture('locators.json').then((locators) => { 
             cy.fixture('loginData.json').then((loginCredential) => { 
-                cy.login(locators.adminLoginField, locators.adminLoginBtn, 
+                cy.loginAdminUI(locators.adminLoginField, locators.adminLoginBtn, 
                     Cypress.env('adminEmail'), loginCredential.wrongPassword
                 );
                 cy.get(loginErrorMessage).should('contain.text', expectedMessage);
