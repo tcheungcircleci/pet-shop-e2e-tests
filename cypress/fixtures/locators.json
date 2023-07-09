@@ -1,0 +1,4 @@
+{
+  "signUpFormField": ".login__form input",
+  "signUpFormButton": ".login__form > .v-btn"
+}
