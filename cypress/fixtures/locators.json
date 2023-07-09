@@ -1,4 +1,8 @@
 {
   "signUpFormField": ".login__form input",
-  "signUpFormButton": ".login__form > .v-btn"
+  "signUpFormButton": ".login__form > .v-btn",
+  "adminLoginField": ".login__form input",
+  "adminLoginBtn": ".login__form > .v-btn",
+  "adminNewCustomerFields": ".customer-card .v-field__input",
+  "adminAddCustomerBtn": "Add new customer"
 }
