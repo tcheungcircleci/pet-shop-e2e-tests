@@ -9,14 +9,6 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
-      - run:
-          name: "echo an env var that is part of our project"
-          command: |
-            echo ${adminEmail}
-      - run:
-          name: "echo an env var that is part of our project"
-          command: |
-            echo ${adminPassword}
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package-lock.json" }}
@@ -35,7 +27,7 @@ jobs:
       - run:
           name: Run tests
           command: |
-            npx cypress run --env allure=true,adminEmail=echo ${adminEmail},echo ${adminPassword}
+            npx cypress run --env allure=true,adminEmail=admin@buckhill.co.uk,adminPassword=admin
       - run:
           name: Generate allure report
           command: allure generate
