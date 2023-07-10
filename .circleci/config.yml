@@ -4,9 +4,6 @@ jobs:
     docker:
       - image: cypress/base:10
     working_directory: ~/repo
-    environment:
-      adminEmail: adminEmail
-      adminPassword: adminPassword
     steps:
       - checkout
       - run:
