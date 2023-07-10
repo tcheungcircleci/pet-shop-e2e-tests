@@ -32,5 +32,6 @@ workflows:
           filters:
             branches:
               only:
-                - main
-      
+                - mai
+    jobs:
+      - pet-shop-e2e-tests      
