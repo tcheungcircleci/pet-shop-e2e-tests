@@ -27,7 +27,7 @@ jobs:
       - run:
           name: Run tests
           command: |
-            npx cypress run
+            npx cypress run --env allure=true
       - run:
           name: Generate allure report
           command: allure generate
