@@ -9,13 +9,6 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
-      - run:
-          name: Env variables
-          environment:
-            adminEmail: adminEmail
-            adminPassword: adminPassword
-          command: |
-            npm ci
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package-lock.json" }}
