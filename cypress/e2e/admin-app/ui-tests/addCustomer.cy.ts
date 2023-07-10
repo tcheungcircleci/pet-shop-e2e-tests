@@ -2,7 +2,7 @@ describe('Add Customer via PetShop-AdminApp', () => {
     beforeEach(() => {
         cy.navigateTo('/login');
         cy.fixture('locators.json').then((locators) => { 
-            cy.login(locators.adminLoginField, locators.adminLoginBtn, 
+            cy.loginAdminUI(locators.adminLoginField, locators.adminLoginBtn, 
                 Cypress.env('adminEmail'), Cypress.env('adminPassword')
             );
         });
