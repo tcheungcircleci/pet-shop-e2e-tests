@@ -25,16 +25,8 @@ jobs:
             - ~/.cache
           key: v1-dependencies-{{ checksum "package-lock.json" }}
       - run:
-          name: Use Environment Variable
-          command: echo $adminEmail
-      - run:
-          name: Use Environment Variable
-          command: echo $adminPassword
-      - run:
           name: Run tests
           command: |
-            export CYPRESS_adminEmail=$adminEmail
-            export CYPRESS_adminPassword=$adminPassword
             npx cypress run --env allure=true
       - run:
           name: Generate allure report
