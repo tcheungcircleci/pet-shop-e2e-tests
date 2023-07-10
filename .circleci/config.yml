@@ -1,11 +1,9 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@12.7.0
+  cypress: cypress-io/cypress@12
 
 jobs:
   pet-shop-e2e-tests:
-    docker:
-      - image: cimg/node:15.1-browsers
     working_directory: ~/repo
     steps:
       - checkout
