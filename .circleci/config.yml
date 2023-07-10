@@ -1,4 +1,7 @@
 version: 2.1
+orbs:
+  node: circleci/node@18.15.0
+
 jobs:
   pet-shop-e2e-tests:
     docker:
