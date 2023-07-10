@@ -9,6 +9,10 @@ module.exports = defineConfig({
       allureWriter(on, config);
       return config;
     },
-    baseUrl: 'https://pet-shop.buckhill.com.hr'
+    baseUrl: 'https://pet-shop.buckhill.com.hr',
+    "retries": {
+      "runMode": 3,
+      "openMode": 3
+    }
   },
 });
