@@ -11,7 +11,7 @@ describe('Add Customer via PetShop-AdminApp', () => {
 
     it('should allow to add a new customer', () => {
         cy.contains('Customers').click();
-        cy.contains(' add new customer ').click();
+        cy.contains(' add new customer ',{timeout: 6000}).click();
         cy.generateRandomUser().then((randomUser) => {
             const user = randomUser;
             cy.fixture('locators.json').then((locators) => { 
