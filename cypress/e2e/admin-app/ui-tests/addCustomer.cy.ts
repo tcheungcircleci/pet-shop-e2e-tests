@@ -3,7 +3,7 @@ describe('Add Customer via PetShop-AdminApp', () => {
         cy.navigateTo('/login');
         cy.fixture('locators.json').then((locators) => { 
             cy.loginAdminUI(locators.adminLoginField, locators.adminLoginBtn, 
-                Cypress.env('adminEmail'), Cypress.env('adminPassword')
+                'admin@buckhill.co.uk', 'admin'
             );
         });
         cy.contains('LOGOUT').should('be.visible');
