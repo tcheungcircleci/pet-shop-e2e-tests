@@ -1,12 +1,14 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@3
+  cypress: cypress-io/cypress@1
 
 jobs:
-  pet-shop-e2e-tests:
+  cypress/run:
     docker:
-      - image: cimg/node:15.1-browsers
-    working_directory: ~/repo
+      - image: cypress/base:10
+    environment:
+      adminEmail: adminEmail
+      adminPassword: adminPassword
     steps:
       - checkout
       - run:
