@@ -33,6 +33,8 @@ jobs:
       - run:
           name: Run tests
           command: |
+            export CYPRESS_adminEmail=$adminEmail
+            export CYPRESS_adminPassword=$adminPassword
             npx cypress run --env allure=true
       - run:
           name: Generate allure report
