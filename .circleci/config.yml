@@ -12,11 +12,11 @@ jobs:
       - run:
           name: "echo an env var that is part of our project"
           command: |
-            echo $adminEmail # this env var must be set within the project
+            echo ${adminEmail}
       - run:
           name: "echo an env var that is part of our project"
           command: |
-            echo $adminPassword # this env var must be set within the project
+            echo ${adminPassword}
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package-lock.json" }}
