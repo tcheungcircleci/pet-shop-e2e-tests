@@ -27,7 +27,7 @@ jobs:
       - run:
           name: Run tests
           command: |
-            npx cypress run --env allure=true adminEmail=$adminEmail adminPassword=$adminPassword
+            npx cypress run --env allure=true,adminEmail=$adminEmail,adminPassword=$adminPassword
       - run:
           name: Generate allure report
           command: allure generate
