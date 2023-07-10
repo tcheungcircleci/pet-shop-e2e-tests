@@ -6,6 +6,9 @@ jobs:
   pet-shop-e2e-tests:
     docker:
       - image: cimg/node:15.1-browsers
+    environment:
+      - adminEmail: adminEmail
+      - adminPassword: adminPassword
     working_directory: ~/repo
     steps:
       - checkout
