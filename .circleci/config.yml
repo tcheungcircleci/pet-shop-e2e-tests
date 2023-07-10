@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  node: circleci/node@4.1
+  cypress: cypress-io/cypress@3
 
 jobs:
   pet-shop-e2e-tests:
