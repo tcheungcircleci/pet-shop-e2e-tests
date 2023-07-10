@@ -12,11 +12,11 @@ jobs:
       - run:
           name: "echo an env var that is part of our project"
           command: |
-            echo 'export adminEmail="${echo $adminEmail | base64 -d}"' >> $BASH_ENV
+            echo ${adminEmail}
       - run:
           name: "echo an env var that is part of our project"
           command: |
-            echo 'export adminPassword="${echo $adminPassword | base64 -d}"' >> $BASH_ENV
+            echo ${adminPassword}
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package-lock.json" }}
@@ -60,4 +60,3 @@ workflows:
                 - main
     jobs:
       - pet-shop-e2e-tests
-      
