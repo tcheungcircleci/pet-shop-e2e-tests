@@ -10,7 +10,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "echo an env var that is part of our project"
+          name: "Env var from Project Setting"
           command: |
             echo ${adminEmail}
             echo ${adminPassword}
@@ -32,7 +32,9 @@ jobs:
       - run:
           name: Run tests
           command: |
-            npx cypress run --env allure=true,adminEmail=admin@buckhill.co.uk,adminPassword=admin
+            export CYPRESS_adminEmail=${adminEmail}
+            export CYPRESS_adminPassword=${adminPassword}
+            npx cypress run --env allure=true
       - run:
           name: Generate allure report
           command: allure generate
