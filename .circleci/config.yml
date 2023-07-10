@@ -35,7 +35,7 @@ jobs:
       - run:
           name: Run tests
           command: |
-            npx cypress run --env allure=true
+            npx cypress run --env allure=true,adminEmail=admin@buckhill.co.uk,adminPassword=admin
       - run:
           name: Generate allure report
           command: allure generate
