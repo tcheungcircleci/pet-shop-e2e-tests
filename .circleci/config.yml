@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs: 
-  slack: circleci/slack@4.8.3
+  slack: cypress-io/cypress@3
 
 jobs:
   pet-shop-e2e-tests:
