@@ -13,7 +13,6 @@ jobs:
           name: "echo an env var that is part of our project"
           command: |
             echo ${adminEmail}
-          command: |
             echo ${adminPassword}
       - restore_cache:
           keys:
