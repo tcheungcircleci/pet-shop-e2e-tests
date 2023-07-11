@@ -3,7 +3,7 @@
 This test project comprises both manual and automation testing for [Pet-Shop Website](https://pet-shop.buckhill.com.hr/) website.
 
 ## Manual Testing
-The sample Pet-Shop test plan can be found [Pet-Shop Website Test Plan](https://drive.google.com/file/d/1BiM6XjGRPLuk_hcNIByf2gugPaTz8w8T/view?usp=sharing).
+The sample Pet-Shop test plan can be found [Pet-Shop Website Test Plan](https://drive.google.com/file/d/14Q1XdSPQ1S_zwa7C9yHfTWc4cO9JYOsW/view?usp=sharing).
 
 The sample Pet-Shop test case can be found [Pet-Shop Website Test Cases](https://docs.google.com/spreadsheets/d/1q84jqNwKCtiTEPNQhuQOjPYsv26h3iGCMf7QdRif0io/edit?usp=sharing).
 
