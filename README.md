@@ -21,6 +21,11 @@ Then do as follows:
 1. Clone this repository to your local device
 2. Open the cloned folder in the Editor
 3. Open the terminal at the root of that cloned folder
+4. Create a `cypress.env.json` file and then add these
+`{
+    "adminEmail": "Put the admin email here",
+    "adminPassword": "Put the admin password here"
+}`
 4. Run the command `npm install` to install all dependancies 
 
 
@@ -66,3 +71,6 @@ Then do as follows:
 |Date|Test Case designed|TCs executed manually |Tcs automated | Bugs found | Bugs fixed
 | :---: | :--- | :--- | :--- |:--- | :--- |
 |11 July 2023 |5|4|3|2|0|
+
+## Allure Report
+The Circle Ci allure report can be found under the Artifacts tab on the Jobs page, by following the link on `allure-report/index.html`.

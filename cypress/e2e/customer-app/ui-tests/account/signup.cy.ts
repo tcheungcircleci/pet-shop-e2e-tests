@@ -3,7 +3,7 @@ describe('Sign Up to PetShop-UserApp', () => {
     it('should allow sign up with valid data', () => {
         cy.intercept('POST', '/api/v1/user/create').as('Customer');
         cy.navigateTo('/');
-        cy.openLoginPopuModal();
+        cy.openLoginPopupModal();
 
         cy.generateRandomUser().then((randomUser) => {
             const user = randomUser;
