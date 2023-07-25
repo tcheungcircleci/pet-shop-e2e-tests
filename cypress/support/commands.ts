@@ -14,7 +14,7 @@ Cypress.Commands.add('navigateTo', (url: string) => {
     cy.visit(url);
 });
 
-Cypress.Commands.add('openLoginPopuModal', () => { 
+Cypress.Commands.add('openLoginPopupModal', () => { 
     cy.contains('LOGIN ').click();
 });
 
