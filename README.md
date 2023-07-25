@@ -71,3 +71,6 @@ Then do as follows:
 |Date|Test Case designed|TCs executed manually |Tcs automated | Bugs found | Bugs fixed
 | :---: | :--- | :--- | :--- |:--- | :--- |
 |11 July 2023 |5|4|3|2|0|
+
+## Allure Report
+The Circle Ci allure report can be found under the Artifacts tab on the Jobs page, by following the link on `allure-report/index.html`.
