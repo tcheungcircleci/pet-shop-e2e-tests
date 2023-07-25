@@ -21,7 +21,7 @@ Then do as follows:
 1. Clone this repository to your local device
 2. Open the cloned folder in the Editor
 3. Open the terminal at the root of that cloned folder
-4. Create a file and then add these
+4. Create a `cypress.env.json` file and then add these
 `{
     "adminEmail": "Put the admin email here",
     "adminPassword": "Put the admin password here"
