@@ -49,13 +49,14 @@ workflows:
   commit:
     jobs:
       - pet-shop-e2e-tests
-  periodical:
-    triggers:
-      - schedule:
-          cron: "0 10 * * 1-5"
-          filters:
-            branches:
-              only:
-                - main
-    jobs:
-      - pet-shop-e2e-tests
+  #Commented out this periodical section
+  #periodical:
+  #  triggers:
+  #    - schedule:
+  #        cron: "0 10 * * 1-5"
+  #        filters:
+   #         branches:
+    #          only:
+     #           - main
+   # jobs:
+    #  - pet-shop-e2e-tests
