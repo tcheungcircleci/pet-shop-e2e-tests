@@ -16,7 +16,7 @@ jobs:
             echo ${adminPassword}
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package-lock.json" }}
+            - v1-dependencies-{{ checksum "package-lock.json" }}
       - run:
           name: Install npm dependencies
           command: |
@@ -30,11 +30,17 @@ jobs:
             - ~/.cache
           key: v1-dependencies-{{ checksum "package-lock.json" }}
       - run:
+          name: Install coverage reporter
+          command: npm install --save-dev cypress-circleci-reporter
+      - run:
           name: Run tests
           command: |
             export CYPRESS_adminEmail=${adminEmail}
             export CYPRESS_adminPassword=${adminPassword}
-            npx cypress run --env allure=true
+            TEST_FILES=$(find ./cypress -regextype posix-extended -regex ".*[-.](cy|spec).(js|ts)")
+            echo "$TEST_FILES" | circleci tests run --command="xargs npx cypress run --env allure=true --reporter cypress-circleci-reporter --spec" --verbose
+      - store_test_results:
+          path: test_results
       - run:
           name: Generate allure report
           command: allure generate
